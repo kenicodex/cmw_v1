@@ -1,0 +1,29 @@
+.body{
+    width: 75%;
+    margin: auto;
+    height: 90vh;
+    /* border: solid 1px grey; */
+    position: relative;
+    padding: 0 10px;
+}
+.txt{
+    font-size: 30px;
+    padding-top: 3em; 
+}
+.txt2{
+    font-size: 15px;
+    padding-top: 1.5em; 
+}
+.ord-btn{
+    width: 100px; margin-top: 1em;
+    padding: 1em 2em; 
+    border: none; color: white;
+    background-color: blue;
+}
+@media screen and (max-width:992px){
+    .body{
+        width: 100%;
+        height: 90vh;
+        border:none;
+    } 
+}
