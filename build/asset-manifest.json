@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.0c8c532e.chunk.css",
+    "main.js": "/static/js/main.b45b69a4.chunk.js",
+    "main.js.map": "/static/js/main.b45b69a4.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.ed35504e.js",
+    "runtime-main.js.map": "/static/js/runtime-main.ed35504e.js.map",
+    "static/js/2.711b3d77.chunk.js": "/static/js/2.711b3d77.chunk.js",
+    "static/js/2.711b3d77.chunk.js.map": "/static/js/2.711b3d77.chunk.js.map",
+    "static/js/3.cb823f24.chunk.js": "/static/js/3.cb823f24.chunk.js",
+    "static/js/3.cb823f24.chunk.js.map": "/static/js/3.cb823f24.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.0c8c532e.chunk.css.map": "/static/css/main.0c8c532e.chunk.css.map",
+    "static/js/2.711b3d77.chunk.js.LICENSE.txt": "/static/js/2.711b3d77.chunk.js.LICENSE.txt",
+    "static/media/Style.css": "/static/media/caleb-university.3413d693.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ed35504e.js",
+    "static/js/2.711b3d77.chunk.js",
+    "static/css/main.0c8c532e.chunk.css",
+    "static/js/main.b45b69a4.chunk.js"
+  ]
+}

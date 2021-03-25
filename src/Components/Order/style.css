@@ -50,6 +50,10 @@
     margin: auto;
     padding-top: 1em;
 }
+
+.shadow{
+    box-shadow: 3px 3px 3px grey inset;
+}
 @media screen and (max-width:992px) {
     .body {
         width: 100%;

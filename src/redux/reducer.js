@@ -12,8 +12,10 @@ const orderBag = (state = [], action) => {
     switch (action.type) {
         case 'add':
             return [...state,action.payload]
-        case 'remove':
-            return action.payload
+        case 'delete':
+            state[action.payload] = "removed"
+            alert(action.payload)
+            return state.filter(x => x !== "removed")
         default:
             return state
     }

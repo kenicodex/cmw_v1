@@ -10,6 +10,12 @@ export const addToOrderBag = (param) => {
         payload: param
     }
 }
+export const DeleteFromBag = (param) => {
+    return {
+        type: "delete",
+        payload: param
+    }
+}
 export const removeFromOrderBag = (param) => {
     return {
         type: "remove",
