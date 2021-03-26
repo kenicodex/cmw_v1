@@ -1,4 +1,5 @@
 import React from 'react';
+import Pay from '../Confirm/paystack';
 import Navbar from '../Navbar/Navbar';
 import './Style.css'
 
@@ -21,6 +22,7 @@ function Home(props) {
                     Make orders with us and get your order under 1 hour <br />
                    Note : No refunds
                </div>
+               <Pay />
                 <button className="ml-4 btn border-info text-info w-25 btn-outline  btn-info-outline" onClick={() => {
                     window.location.assign('/order')
                 }}>

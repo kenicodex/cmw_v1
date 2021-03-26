@@ -121,10 +121,10 @@ function Order(props) {
                     <div className="posotion-relative w-shk shadow border my-4 mx-auto text-center bg-info text-white py-1 rounded">
                        <div className="h4"> {Food} &#x20A6;{quantity}</div> <hr />
                         <div className="d-flex">
-                            <div className="m-auto w-50  bg-info">
+                            <div className="m-auto w-50 bg-info text-white">
                                 {food.map((x,i) => {
                                     return (
-                                        <div onClick={() => { setFood(x) }} className={`text-center px-2 text-${Food === x ? "info" : "white"} bg-${Hall === x? "info" : "white"}`} key={i}
+                                        <div onClick={() => { setFood(x) }} className={`text-center px-2 text-${Food === x? "info" : "white" } bg-${Food === x? "white" : "info" }`} ey={i}
                                             style={{ cursor: "pointer", zIndex: "100" }}>{x}  </div>
                                     )
                                 })}

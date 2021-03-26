@@ -1,36 +1,22 @@
-import React, { createRef, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { DeleteFromBag } from '../../redux/action';
 import Navbar from '../Navbar/Navbar';
-import { useScreenshot } from 'use-react-screenshot'
 import './style.css'
+import Pay from './paystack';
 
 function Confirm(props) {
+    const sendItem = useSelector(state => state.sendItem)
+    const orderBag = useSelector(state => state.orderBag)
+    const [Tot, setTot] = useState(0)
+    const dispatch = useDispatch()
     useEffect(() => {
         let x = 0;
-
         orderBag.forEach(element => {
             x = x + element.Total
         });
         setTot(x)
-    })
-    const sendItem = useSelector(state => state.sendItem)
-    const orderBag = useSelector(state => state.orderBag)
-    const [Tot, setTot] = useState(0)
-    const [Cap, setCap] = useState("")
-    const [image, takeScreenshot] = useScreenshot()
-    const dispatch = useDispatch()
-    const ref = createRef(null)
-    const getImage = () => takeScreenshot(ref.current)
-
-    // const Added = () => {
-
-    //     return (
-
-    //     )
-    // }
-    useEffect(() => {
-    }, [sendItem.addons, orderBag])
+    },[orderBag])
     return (
         <div className="bg-light position-fixed w-100" style={{ height: '100vh' }} >
             <Navbar color="bg-info" />
@@ -39,11 +25,11 @@ function Confirm(props) {
                 <div className="container" >
                     {sendItem.length !== 0 ?
                         <React.Fragment  >
-                            <img src={image} width="100%" height="400px" className="position-absolute" onContextMenu="return false;" style={{ top: "50px",  zIndex: "100" }} alt="" />
+                            {/* <img src={image} width="100%" height="1000px" className="position-absolute" onContextMenu="return false;" style={{ top: "50px",  zIndex: "100" }} alt="" /> */}
                             <div className="h2 text-center bg-light w-100 py-4 h-auto">Order List <br />
                                 <span className="h4">{orderBag.length} packs for &#x20A6;{Tot}</span></div>
 
-                            <div className="w-100" ref={ref}>
+                            <div className="w-100" >
                                 {orderBag.map(({ Name, Phone, Room, Hall, Food, Date, Time, Price, addons, Total }, i) => {
 
                                     let dis = addons.filter(x => x.number !== 0)
@@ -68,7 +54,6 @@ function Confirm(props) {
                                                     )
                                                 }) : "You didn't add anything on top"}</span> at {Time} {Date}
                                             </div>
-                                            {Cap}
                                             <div className="h5">Total :&#x20A6;{Total || ""}</div>
                                         </div>
                                     )
@@ -76,7 +61,7 @@ function Confirm(props) {
                             </div>
                             <div className="w-100 my-4 text-center">
                                 <button className="btn-success btn mx-1 my-2" onClick={() => { window.location.assign("/order") }}> {"<"} Add Pack</button> <br />
-                                <button className="btn-success btn " onClick={getImage}>Complete Order &#x20A6;{Tot} {">"}</button>
+                                <Pay a={Tot} bag={orderBag} />
                             </div>
                         </React.Fragment>
                         : <div className="h3 text-center mt-4">You have not Made any order</div>}
